@@ -48,6 +48,9 @@ aside #text { margin: 0 0 .75rem; }
 #steps button { width: 100%; text-align: left; font-family: Consolas, monospace; font-size: .9rem; padding: .3rem .6rem; background: none; border-color: transparent; }
 #steps button.cur { background: var(--panel); border-color: var(--gold); }
 
+.about { margin-top: 2.5rem; max-width: 70ch; }
+.about h2 { margin-bottom: .6rem; }
+.about li { margin-bottom: .45rem; }
 footer { margin-top: 2rem; color: var(--mute); font-size: .9rem; max-width: 70ch; }
 
 /* automa */
