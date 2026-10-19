@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thompson: da espressione regolare a ε-NFA</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Costruzione di Thompson</h1>
+  <p>Scrivi un'espressione regolare e guarda l'ε-NFA costruirsi un frammento alla volta.</p>
+</header>
+
+<form id="form" autocomplete="off">
+  <label for="re">Espressione regolare</label>
+  <div class="row">
+    <input id="re" spellcheck="false" placeholder="(a|b)*abb" autofocus>
+    <button type="button" data-ins="ε" title="Stringa vuota">ε</button>
+    <button type="button" data-ins="∅" title="Linguaggio vuoto">∅</button>
+    <button type="submit" class="primary">Costruisci</button>
+  </div>
+  <p id="err" role="alert"></p>
+  <p class="ex">Prova con
+    <button type="button" data-ex="(a|b)*">(a|b)*</button>
+    <button type="button" data-ex="a|bc">a|bc</button>
+    <button type="button" data-ex="(a|b)*abb">(a|b)*abb</button>
+    <button type="button" data-ex="(ab*|c)*">(ab*|c)*</button>
+  </p>
+</form>
+
+<div class="grid">
+  <section class="stage" aria-label="Automa">
+    <svg id="canvas" role="img" aria-label="ε-NFA costruito fino al passo corrente"></svg>
+    <nav class="ctrl" aria-label="Passi">
+      <button id="first" title="Primo passo">«</button>
+      <button id="prev" title="Passo precedente (←)">Indietro</button>
+      <span id="count" aria-live="polite"></span>
+      <button id="next" class="primary" title="Passo successivo (→)">Avanti</button>
+      <button id="last" title="Ultimo passo">»</button>
+    </nav>
+    <p class="legend">
+      <span class="k r"></span>primo frammento (R)
+      <span class="k s"></span>secondo frammento (S)
+      <span class="k n"></span>stati e archi nuovi
+    </p>
+  </section>
+
+  <aside>
+    <h2 id="title"></h2>
+    <p id="text"></p>
+    <p id="stats" class="stats"></p>
+    <ul id="props" class="props"></ul>
+    <h3>Tutti i passi</h3>
+    <ol id="steps"></ol>
+  </aside>
+</div>
+
+<footer>
+  Convenzioni di Thompson e notazione come nella Lezione #4 del corso di Linguaggi di programmazione e compilatori (UnivAQ).
+  Operatori supportati: <code>|</code> <code>*</code> concatenazione e parentesi, più <code>ε</code> e <code>∅</code>.
+  Per usare un operatore alla lettera, anteponi <code>\</code>.
+</footer>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
