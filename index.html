@@ -62,20 +62,6 @@
   </aside>
 </div>
 
-<article class="about">
-  <h2>Come funziona l'algoritmo di Thompson</h2>
-  <p>L'algoritmo di Thompson trasforma un'espressione regolare in un ε-NFA equivalente: un automa a stati finiti non deterministico, con ε-transizioni, che riconosce esattamente lo stesso linguaggio. Si costruisce un piccolo automa per ogni parte dell'espressione e poi li si compone dal basso verso l'alto.</p>
-  <p>Ogni frammento ha un solo stato accettante, nessun arco entrante nello stato iniziale e nessun arco uscente dall'accettante. È questo che permette di incastrarli senza ambiguità.</p>
-  <h3>Le regole di costruzione</h3>
-  <ul>
-    <li><strong>Casi base.</strong> ∅ non ha transizioni, ε ha una sola ε-transizione, un simbolo a ha una transizione etichettata a.</li>
-    <li><strong>Concatenazione RS.</strong> L'accettante di R si collega con una ε-transizione all'iniziale di S; l'accettante del nuovo automa è quello di S.</li>
-    <li><strong>Alternativa R|S.</strong> Un nuovo stato iniziale si dirama verso R e S, e un nuovo stato accettante li raccoglie: quattro ε-transizioni.</li>
-    <li><strong>Chiusura R*.</strong> Un nuovo iniziale e un nuovo accettante, con quattro ε-transizioni: entrare in R, uscirne, saltarlo del tutto o ripeterlo.</li>
-  </ul>
-  <p>Per <code>(a|b)*</code> il risultato ha 8 stati e 10 transizioni: l'algoritmo non produce automi piccoli, ma li produce sempre e in modo meccanico. Prova l'esempio qui sopra e scorri i passi.</p>
-</article>
-
 <footer>
   Convenzioni di Thompson e notazione come nella Lezione del corso di Linguaggi di programmazione e compilatori (UnivAQ).
   Operatori supportati: <code>|</code> <code>*</code> concatenazione e parentesi, più <code>ε</code> e <code>∅</code>.
