@@ -52,7 +52,7 @@ footer { margin-top: 2rem; color: var(--mute); font-size: .9rem; max-width: 70ch
 
 /* automa */
 .ed { fill: none; stroke: #8fa9c4; stroke-width: 1.6; }
-.ed.new { stroke: var(--gold); stroke-width: 2.4; }
+.ed.new { stroke: var(--gold); stroke-width: 2.2; }
 .ao { fill: #8fa9c4; } .an { fill: var(--gold); }
 .n circle { fill: var(--bg); stroke: var(--ink); stroke-width: 2; }
 .n circle.acc { fill: none; }

@@ -10,7 +10,7 @@ const prec = n => ({ alt: 0, cat: 1, star: 2 }[n.t] ?? 3);
 const wrap = (n, min) => (prec(n) < min ? `(${str(n)})` : str(n));
 
 // Rimette l'AST in forma di stringa (serve per i titoli dei passi).
-export function str(n) {
+function str(n) {
   switch (n.t) {
     case 'sym': return /[|*()\\ε∅]/.test(n.v) ? '\\' + n.v : n.v;
     case 'eps': return 'ε';
@@ -22,7 +22,7 @@ export function str(n) {
 }
 
 // Ritorna la lista dei passi. Annota ogni nodo con node.ids = {i, a}.
-export function build(root) {
+function build(root) {
   let next = 0;
   const steps = [];
 

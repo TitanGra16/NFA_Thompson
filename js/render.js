@@ -47,10 +47,10 @@ function edge([x1, y1], [x2, y2], k, rise = 40) {
 }
 
 // Ritorna il contenuto dell'SVG e il suo viewBox per un passo di build().
-export function svgMarkup(step) {
+function svgMarkup(step) {
   const { w, h, pos, hint } = layout(step.node);
   const { frag, role } = step;
-  const marker = (id, cls) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" class="${cls}"/></marker>`;
+  const marker = (id, cls) => `<marker id="${id}" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" class="${cls}"/></marker>`;
   let paths = '', labels = '', nodes = '';
 
   for (const e of frag.t) {

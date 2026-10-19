@@ -1,6 +1,3 @@
-import { parse, ParseError } from './parser.js';
-import { build, str } from './thompson.js';
-import { svgMarkup } from './render.js';
 
 const $ = s => document.querySelector(s);
 const input = $('#re'), svg = $('#canvas');
@@ -28,7 +25,7 @@ function show() {
   const s = steps[k], f = s.frag, [title, text] = explain(s.node);
   const { markup, vb } = svgMarkup(s);
   svg.setAttribute('viewBox', vb.join(' '));
-  svg.style.maxWidth = Math.round(vb[2] * 1.5) + 'px';
+  svg.style.maxWidth = Math.round(vb[2] * 1.25) + 'px';
   svg.innerHTML = markup;
   $('#title').textContent = title;
   $('#text').textContent = text;

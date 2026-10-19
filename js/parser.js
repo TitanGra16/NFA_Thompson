@@ -5,11 +5,11 @@
 //   atom := '(' alt ')' | 'ε' | '∅' | simbolo | '\' carattere
 // AST: {t:'sym',v} {t:'eps'} {t:'empty'} {t:'cat',l,r} {t:'alt',l,r} {t:'star',c}
 
-export class ParseError extends Error {
+class ParseError extends Error {
   constructor(msg, pos) { super(msg); this.pos = pos; }
 }
 
-export function parse(text) {
+function parse(text) {
   let i = 0;
   const peek = () => { while (i < text.length && /\s/.test(text[i])) i++; return text[i]; };
   const fail = msg => { throw new ParseError(msg, i); };
