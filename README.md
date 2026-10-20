@@ -1,6 +1,6 @@
 # Thompson: da espressione regolare a ε-NFA
 
-Pagina statica che costruisce, passo per passo, l'ε-NFA di un'espressione regolare con l'algoritmo di Thompson, seguendo le convenzioni delle slide del corso (Lezione #4).
+Pagina statica che costruisce, passo per passo, l'ε-NFA di un'espressione regolare con l'algoritmo di Thompson, seguendo le convenzioni delle slide del corso Compilatori in UnivAq.
 
 ## Struttura
 
